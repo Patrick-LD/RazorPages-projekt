@@ -1,0 +1,178 @@
+﻿@page
+@model RazorPages_projekt.Pages.Shared.TimeLineModel
+@{
+    ViewData["Title"]="Tidslinje";
+}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline</title>
+    <style>
+        body {
+            font-family: cursive;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+            .timeline::after {
+                content: '';
+                position: absolute;
+                width: 4px;
+                background-color: #333;
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                margin-left: -2px;
+            }
+
+        .timeline-item {
+            padding: 20px;
+            position: relative;
+            width: 50%;
+            background: #3d3c3c;
+            border-radius: 6px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #f44336;
+            border-radius: 50%;
+            top: 20px;
+            left: calc(100% + 12px);
+        }
+
+        .right::before {
+            left: -32px;
+        }
+
+        .timeline-content {
+            padding: 10px;
+            color: white;
+        }
+
+        .timeline-end {
+            width: 60%;
+            margin: 50px auto;
+            background: #3d3c3c;
+            padding: 20px;
+            text-align: center;
+            border-radius: 6px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        
+        .qr-code {
+            margin-top: 10px;
+            width: 120px; 
+            height: 120px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px auto;
+        }
+
+            .qr-code img {
+                width: 100%;
+                height: auto;
+            }
+
+       screen and (max-width: 600px) {
+            .timeline::after
+
+        {
+            left: 20px;
+        }
+
+        .timeline-item {
+            width: 100%;
+            left: 0;
+            padding-left: 40px;
+        }
+
+            .timeline-item::before {
+                left: 8px;
+            }
+
+        .timeline-end {
+            width: 80%;
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center; color:white;">Tidslinje</h1>
+    <div class="timeline">
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h2>År 1969</h2>
+                <p>Gasolin' var et dansk rockband fra Christianshavn, København, dannet af Kim Larsen, Franz Beckerlee og Wili Jønsson i 1969.</p>
+            </div>
+        </div>
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h2>År 1970</h2>
+                <p>Gasolin' manglede en trommeslager, og derfor trådte Bjørn Uglebjerg frem og blev deres første trommeslager.</p>
+            </div>
+        </div>
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h2>År 1970</h2>
+                <p>Gasolin' udgav deres første single "Silky Sally". Den blev efterfulgt af "Child of Institution" og "Johnny The Jackpot." Disse tre singler blev sunget på engelsk og floppede. De blev derefter udgivet på dansk, hvilket blev en kæmpe succes.</p>
+            </div>
+        </div>
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h2>År 1971</h2>
+                <p>Bjørn Uglebjerg blev erstattet af Søren Berlev i 1971. Han blev dermed deres anden og sidste trommeslager, indtil bandet senere blev opløst.</p>
+            </div>
+        </div>
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h2>År 1972-1978</h2>
+                <p>I disse år var Gasolin' det mest populære rockband i Danmark. Sammen med produceren Roy Thomas Baker udgav de klassikere som Gasolin' 3, Gas 5 og Efter endnu en dag.</p>
+            </div>
+        </div>
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h2>År 1978</h2>
+                <p>Bandet blev opløst på toppen af deres succes. Årsagerne til splittelsen var manglende evne til at bryde igennem på det internationale marked og personlige forskelle.</p>
+            </div>
+        </div>
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h2>I dag</h2>
+                <p>Den dag i dag anerkendes Gasolin' som Danmarks svar på The Beatles og et af landets mest ikoniske rockbands, både for deres musik og deres personlighed.</p>
+            </div>
+        </div>
+    </div>
+    <div class="timeline-end">
+        <h2>Lyst til lidt ekstra?</h2>
+        <p>Her er en QR-kode til en video for jer, der har lyst til at visualisere Gasolins ånd.</p>
+        <div class="qr-code">
+            <img src="~/css/QR CODE.png">
+        </div>
+    </div>
+</body>
+</html>
